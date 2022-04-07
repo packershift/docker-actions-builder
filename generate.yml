@@ -9,4 +9,4 @@
     - set_fact:
         github_branch: "{{ lookup('env', 'GITHUB_BRANCH' ) | ternary (lookup('env', 'GITHUB_BRANCH' ), omit) }}"
   roles:
-    - { role: roles/generate-ci }
+    - { role: roles/generate-actions }
