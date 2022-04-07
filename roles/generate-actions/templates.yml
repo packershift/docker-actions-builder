@@ -3,3 +3,4 @@
 templated_files:
   - { src: 'DONATE.j2', dest: 'root/donate.txt' , donate: 'true' }
   - { src: 'FUNDING.j2', dest: '.github/FUNDING.yml' }
+  - { src: 'LICENSE.j2', dest: 'LICENSE' }
