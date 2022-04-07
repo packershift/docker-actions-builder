@@ -2,7 +2,4 @@
 
 templated_files:
   - { src: 'DONATE.j2', dest: 'root/donate.txt' , donate: 'true' }
-  - { src: 'FUNDING.j2', dest: '.gitlab/FUNDING.yml' }
-  - { src: '.gitlab-ci.yml.j2', dest: '.gitlab-ci.yml' }
-  - { src: 'Makefile.j2', dest: 'Makefile'}
-  - { src: 'LICENSE.j2', dest: 'LICENSE' }
+  - { src: 'FUNDING.j2', dest: '.github/FUNDING.yml' }
