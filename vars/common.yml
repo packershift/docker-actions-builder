@@ -1,0 +1,11 @@
+---
+# Common vars file for docker-ci-builder
+
+CI_PROJECT_DOMAIN: "packershift.io"
+CI_PROJECT_LICENSE: "Apache License 2.0"
+CI_PROJECT_DOMAIN_NAME_SHORT: "packershift"
+CI_GITLAB_URL: "https://gitlab.com/{{ CI_PROJECT_DOMAIN_NAME_SHORT }}"
+CI_GITHUB_URL: "https://github.com/{{ CI_PROJECT_DOMAIN_NAME_SHORT }}"
+CI_PROJECT_URL: "{{ CI_GITLAB_URL }}/{{ CI_PROJECT_NAME }}"
+CI_PROJECT_DOCS_URL: "https://docs.{{ CI_PROJECT_DOMAIN }}"
+CI_PROJECT_REGISTRY_URL: "https://registry.{{ CI_PROJECT_DOMAIN }}"

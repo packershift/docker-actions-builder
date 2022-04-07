@@ -1,0 +1,62 @@
+---
+
+# project information
+project_name: actions-builder
+full_custom_readme: |
+  {% raw -%}
+  # packershift/actions-builder
+
+  Expects to run as part of the LSIO CI process. Not for public consumption.
+
+  ## Running against remote project
+
+  ```shell
+  docker run --rm \
+    -e CONTAINER_NAME=${CONTAINER_NAME} \
+    -v ${TEMPDIR}:/ansible/gitlab \
+    ghcr.io/packershift/actions-builder:latest
+  ```
+
+  ## Running against local project
+
+  If you need to test functionality just navigate to the folder with the jenkins-vars.yml and run:
+
+  ```shell
+  docker pull ghcr.io/packershift/actions-builder:latest && \
+  docker run --rm \
+    -v $(pwd):/tmp \
+    -e LOCAL=true \
+    -e PUID=$(id -u) -e PGID=$(id -g) \
+    ghcr.io/packershift/actions-builder:latest && \
+  rm -rf .github-external
+  ```
+
+  Newly generated files (including `README.md`, `Jenkinsfile`, issue templates, etc.) will overwrite the existing files in your current working directory.
+
+  ## Building locally
+
+  If you want to make local modifications to these images for development purposes or just to customize the logic:
+
+  ```shell
+  git clone https://github.com/packershift/docker-actions-builder.git
+  cd docker-actions-builder
+  docker build \
+    --no-cache \
+    --pull \
+    -t ghcr.io/packershift/actions-builder:latest .
+  ```
+
+  The ARM variants can be built on x86_64 hardware using `multiarch/qemu-user-static`
+  
+  ```shell
+  docker run --rm --privileged multiarch/qemu-user-static:register --reset
+  ```
+
+  Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64`.
+
+  ## Versions
+
+  The following line is only in this repo for loop testing:
+
+  - { date: "01.01.50:", desc: "I am the release message for this internal repo." }
+  {%- endraw %}

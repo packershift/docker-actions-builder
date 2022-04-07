@@ -1,0 +1,13 @@
+---
+# defaults file for roles/generate-actions
+
+branch: master
+organization: packershift
+templated_vars:
+ - 'gitlab-ci-config.yml'
+ - 'readme-config.yml'
+unraid_template_sync: true
+unraid_template: true
+project_deprecation_status: false
+CI_PROJECT_BLURB_OPTIONAL_EXTRAS_ENABLED: false
+CI_PROJECT_BLURB_OPTIONAL_EXTRAS: []
