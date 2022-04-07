@@ -4,7 +4,7 @@
 branch: master
 organization: packershift
 templated_vars:
- - 'gitlab-ci-config.yml'
+ - 'actions-config.yml'
  - 'readme-config.yml'
 unraid_template_sync: true
 unraid_template: true
