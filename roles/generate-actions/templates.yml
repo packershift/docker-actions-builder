@@ -3,3 +3,4 @@
 templated_files:
   - { src: 'DONATE.j2', dest: 'root/donate.txt' , donate: 'true' }
   - { src: 'LICENSE.j2', dest: 'LICENSE' }
+  - { src: 'dependabot.yml.j2', dest: '.github/dependabot.yml' }
