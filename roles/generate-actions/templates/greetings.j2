@@ -1,0 +1,13 @@
+name: Greetings
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        issue-message: '{% if CI_PROJECT_DEPRECATION_STATUS %}This image is deprecated. We will not offer support for this image and it will not be updated. The [README]({{ CI_PROJECT_GITHUB_ASSET }}/README.md) may have additional information. {% endif %}Thanks for opening your first issue here! Be sure to follow the [bug]({{ CI_PROJECT_GITHUB_ASSET }}/.github/ISSUE_TEMPLATE/bug-report.yml) or [feature]({{ CI_PROJECT_GITHUB_ASSET }}/.github/ISSUE_TEMPLATE/feature-request.yml) issue templates!'
+        pr-message: '{% if CI_PROJECT_DEPRECATION_STATUS %}This image is deprecated. We will not offer support for this image and it will not be updated. The [README]({{ CI_PROJECT_GITHUB_ASSET }}/README.md) may have additional information. {% endif %}Thanks for opening this pull request! Be sure to follow the [pull request template]({{ CI_PROJECT_GITHUB_ASSET }}/.github/PULL_REQUEST_TEMPLATE.md)!'
+        repo-token: ${{ '{{' }} secrets.GITHUB_TOKEN {{ '}}' }}

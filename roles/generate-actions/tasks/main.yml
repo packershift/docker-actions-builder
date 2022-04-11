@@ -34,7 +34,7 @@
     file: "/ansible/roles/generate-actions/templates.yml"
 
 # Directory managemnet
-- name: Create destination directory for generated .gitlab-ci.yml
+- name: Create destination directory for generated github actions
   when: lookup('env', 'LOCAL') != "true"
   file:
     path: "github/{{ project_repo_name }}"
@@ -74,10 +74,10 @@
     owner: sysadm
     group: sysadm
 
-- name: Create destination directory for generated gitlab ISSUE_TEMPLATE files
+- name: Create destination directory for generated github ISSUE_TEMPLATE files
   when: lookup('env', 'LOCAL') == "true"
   file:
-    path: "/tmp/.github/issue_templates"
+    path: "/tmp/.github/ISSUE_TEMPLATE"
     state: directory
     owner: sysadm
     group: sysadm
@@ -85,7 +85,7 @@
 - name: Create destination directory for generated github ISSUE_TEMPLATE files
   when: lookup('env', 'LOCAL') != "true"
   file:
-    path: "github/{{ project_repo_name }}/.github/issue_templates"
+    path: "github/{{ project_repo_name }}/.github/ISSUE_TEMPLATE"
     state: directory
     owner: sysadm
     group: sysadm
@@ -304,7 +304,7 @@
     - item.unraid_template is defined
     - full_custom_readme is not defined
     - '"baseimage" not in project_name'
-    - '"gitlab-builder" not in project_name'
+    - '"github-builder" not in project_name'
   template:
     src: "../templates/{{ item.src }}"
     dest: "github/{{ project_repo_name }}/{{ item.dest }}"
@@ -320,7 +320,7 @@
     - item.unraid_template is defined
     - full_custom_readme is not defined
     - '"baseimage" not in project_name'
-    - '"gitlab-builder" not in project_name'
+    - '"github-builder" not in project_name'
   template:
     src: "../templates/{{ item.src }}"
     dest: "/tmp/{{ item.dest }}"
@@ -387,5 +387,5 @@
 - name: Allow non root host to delete temp files
   when:
     - lookup('env', 'LOCAL') != "true"
-  command: chmod -R 777 /ansible/gitlab
+  command: chmod -R 777 /ansible/github
   delegate_to: localhost
