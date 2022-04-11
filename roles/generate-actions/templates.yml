@@ -8,4 +8,5 @@ templated_files:
   - { src: 'bug-report.j2', dest: '.github/ISSUE_TEMPLATE/bug-report.yml' }
   - { src: 'feature-request.j2', dest: '.github/ISSUE_TEMPLATE/feature-request.yml' }
   - { src: 'greetings.j2', dest: '.github/workflows/greetings.yml' }
+  - { src: 'stale.j2', dest: '.github/workflows/stale.yml' }
   
