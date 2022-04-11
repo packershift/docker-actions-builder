@@ -3,9 +3,9 @@
 templated_files:
   - { src: 'DONATE.j2', dest: 'root/donate.txt' , donate: 'true' }
   - { src: 'LICENSE.j2', dest: 'LICENSE' }
-  - { src: 'dependabot.yml.j2', dest: '.github/dependabot.yml' }
-  - { src: 'config.yml.j2', dest: '.github/ISSUE_TEMPLATE/config.yml' }
-  - { src: 'bug-report.yml.j2', dest: '.github/ISSUE_TEMPLATE/bug-report.yml' }
-  - { src: 'feature-request.yml.j2', dest: '.github/ISSUE_TEMPLATE/feature-request.yml' }
-  - { src: 'greetings.yml.j2', dest: '.github/workflows/greetings.yml' }
+  - { src: 'dependabot.j2', dest: '.github/dependabot.yml' }
+  - { src: 'config.j2', dest: '.github/ISSUE_TEMPLATE/config.yml' }
+  - { src: 'bug-report.j2', dest: '.github/ISSUE_TEMPLATE/bug-report.yml' }
+  - { src: 'feature-request.j2', dest: '.github/ISSUE_TEMPLATE/feature-request.yml' }
+  - { src: 'greetings.j2', dest: '.github/workflows/greetings.yml' }
   
