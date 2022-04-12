@@ -5,7 +5,7 @@ branch: master
 organization: packershift
 templated_vars:
  - 'buildspec.yml'
- - 'readme-spec.yml'
+ - 'buildspec-readme.yml'
 unraid_template_sync: true
 unraid_template: true
 project_deprecation_status: false
