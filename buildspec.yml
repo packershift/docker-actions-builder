@@ -1,0 +1,14 @@
+---
+
+# GitHub actions variables
+project_name: actions-builder
+project_branch: master
+project_description: "Docker image used to develop build logic for templating GitHub actions."
+
+release_version: major
+release_type: os
+release_tag: latest
+
+github_actions_params:
+  - container_name: actions-builder
+  - dockerhub_image_name: 'packershift/actions-builder'

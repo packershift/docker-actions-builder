@@ -1,6 +1,9 @@
 ---
 
 templated_files:
+  - { src: '.editorconfig.j2', dest: '.editorconfig' }
+  - { src: '99-deprecation.j2', dest: 'root/etc/cont-init.d/99-deprecation', deprecation: 'true' }
+  - { src: 'CONTRIBUTING.j2', dest: '.github/CONTRIBUTING.md' }
   - { src: 'DONATE.j2', dest: 'root/donate.txt' , donate: 'true' }
   - { src: 'LICENSE.j2', dest: 'LICENSE' }
   - { src: 'dependabot.j2', dest: '.github/dependabot.yml' }
