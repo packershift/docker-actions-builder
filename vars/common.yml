@@ -1,15 +1,16 @@
 ---
-# Common vars file for docker-actions-builder
-CI_ORG_NAME: "packershift.io"
-CI_ORG_NAME_SHORT: "packershift"
+# Organization specific common vars
+organization_domain: "packershift.io"
+organization_name: "packershift"
+organization_github_url: "https://github.com/{{ organization_name }}"
+organization_docs_url: "https://docs.{{ organization_domain }}"
 
 # Project specific common vars 
-CI_PROJECT_LICENSE: "Apache License 2.0"
-CI_GITHUB_URL: "https://github.com/{{ CI_ORG_NAME_SHORT }}"
-CI_PROJECT_URL: "{{ CI_GITHUB_URL }}/{{ CI_PROJECT_NAME }}"
-CI_PROJECT_DOCS_URL: "https://docs.{{ CI_ORG_NAME }}"
-CI_PROJECT_REGISTRY_URL: "https://registry.{{ CI_ORG_NAME }}"
+project_license: "Apache License 2.0"
+project_url: "{{ organization_github_url }}/{{ project_name }}"
+project_docs_url: "https://docs.{{ organization_domain }}/{{ project_name }}"
+project_registry: "https://registry.{{ organization_domain }}"
 
 #Project default vars
-CI_PROJECT_DEPRECATION_STATUS: False
-CI_PROJECT_GITHUB_ASSET: "{{ CI_PROJECT_URL }}/blob/{{ CI_PROJECT_BRANCH }}"
+project_deprecations_status: False
+project_github_asset: "{{ project_url }}/blob/{{ project_branch }}"
