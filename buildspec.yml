@@ -2,15 +2,16 @@
 
 # GitHub actions variables
 
-CI_PROJECT_NAME: docker-actions-builder
-CI_PROJECT_BRANCH: master
-CI_PROJECT_DESCRIPTION: "Docker image used to develop build logic for templating GitHub actions."
+project:
+  - name: docker-actions-builder
+  - branch: master
+  - description: "Docker image used to develop build logic for templating GitHub actions."
 
-CI_RELEASE_VERSION: major
-CI_EXTERNAL_TYPE: os
-CI_RELEASE_TYPE: major
-CI_RELEASE_TAG: latest
-
-project_ci_vars:
-  - CONTAINER_NAME: 'actions-builder'
-  - DOCKERHUB_IMAGE: 'packershift/actions-builder'
+release:
+  - version: major
+  - type: os
+  - tag: latest
+  
+github_actions_params:
+  - container_name: actions-builder
+  - dockerhub_image_name: 'packershift/actions-builder'

@@ -1,0 +1,22 @@
+#!/usr/bin/with-contenv bash
+
+echo '
+****************************************************************************************
+****************************************************************************************
+*                                                                                      *
+*                                                                                      *
+*                   This image is deprecated and out-of-date.                          *
+*   We are no longer supporting this version of the image and it will not be updated.  *
+*    So you'll need to manually pull our new image in order to use latest features.    *
+*         We know this can be pain, and we're sorry for asking you to do it.           *
+*                                                                                      *
+*                                                                                      *
+****************************************************************************************
+****************************************************************************************
+{% if project_deprecation_message is defined %}
+
+{{ project_deprecation_message | regex_replace('\'','\\\'') }}
+
+****************************************************************************************
+****************************************************************************************
+{% endif %}'
