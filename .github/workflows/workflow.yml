@@ -18,11 +18,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Setting up environmental variables
-        run: |
-          echo EXIT_STATUS = '' >> $GITHUB_ENV
-          echo PACKER_RELEASE=`docker run --rm ghcr.io/linuxserver/alexeiled-skopeo sh -c 'skopeo inspect docker://docker.io/'${{ env.DOCKERHUB_IMAGE_NAME }}':latest 2>/dev/null' | jq -r '.Labels.build_version' | awk '{print $3}' | grep '\\-ls' || :` >> $GITHUB_ENV
-          echo PACKER_RELEASE_NOTES=`cat buildspec-readme.yml | awk -F \\" '/date: "[0-9][0-9].[0-9][0-9].[0-9][0-9]:/ {print $4;exit;}' | sed -E ':a;N;$!ba;s/\\r{0,1}\\n/\\\\n/g'` >> $GITHUB_ENV
-          echo PACKER_GITHUB_DATE=$(date '+%Y-%m-%dT%H:%M:%S%:z') >> $GITHUB_ENV
-          echo PACKER_COMMIT_SHA=$(git rev-parse --short "$GITHUB_SHA") >> $GITHUB_ENV
-          echo PACKER_PULL_REQUEST=${{ github.event.number }} >> $GITHUB_ENV
-          echo PACKER_RELEASE_NUMBER=$(echo ${PACKER_RELEASE} |sed 's/^.*-ls//g') >> $GITHUB_ENV
+        run: env
