@@ -16,9 +16,12 @@ jobs:
     steps:
       - name: Setting up env variables
         run: |
-          echo DATE=`date '+%Y-%m-%dT%H:%M:%S%:z'` >> $GITHUB_ENV
+          echo DATE=$(date '+%Y-%m-%dT%H:%M:%S%:z') >> $GITHUB_ENV
+          echo COMMIT_SHA=$(git rev-parse --short "$GITHUB_SHA")" >> $GITHUB_ENV
     
       - name: Fetching up env varibales
         run: |
           echo MyDate=${{ env.DATE }}
           echo MYENv=${{ env.CONTAINER_NAME }}
+          echo SHA=${{ env.COMMIT_SHA }}
+          
