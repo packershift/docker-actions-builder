@@ -11,3 +11,5 @@ environment_vars:
   - MULTI_ARCH: True
   - CONTAINER_NAME: actions-builder
   - DOCKERHUB_IMAGE_NAME: packershift/actions-builder
+  - ORGANIZATION: packershift
+  - PROJECT_REPO: docker-actions-builder
