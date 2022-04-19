@@ -9,3 +9,16 @@ env:
   MULTI_ARCH: 'True'
   CONTAINER_NAME: 'actions-builder'
   DOCKERHUB_IMAGE_NAME: 'packershift/actions-builder'
+
+jobs:
+  prepare:
+  runs-on: ubuntu-latest 
+  steps:
+    - name: Setting up env variables
+      run: |
+        echo DATE=`date '+%Y-%m-%dT%H:%M:%S%:z'` >> $GITHUB_ENV
+    
+    - name: Fetching up env varibales
+      run: |
+        echo MyDate=${{ env.DATE }}
+        echo MYENv=${{ env.CONTAINER_NAME }}
