@@ -1,0 +1,13 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+       - develop
+
+env:
+{% for envi in environment_vars %}
+{% for k,v in envi.items() %}
+  {{ k }}: '{{ v }}'
+{% endfor %}
+{% endfor %}
