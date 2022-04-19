@@ -1,0 +1,11 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+       - develop
+
+env:
+  MULTI_ARCH: 'True'
+  CONTAINER_NAME: 'actions-builder'
+  DOCKERHUB_IMAGE_NAME: 'packershift/actions-builder'
