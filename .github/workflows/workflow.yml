@@ -12,13 +12,13 @@ env:
 
 jobs:
   prepare:
-  runs-on: ubuntu-latest 
-  steps:
-    - name: Setting up env variables
-      run: |
-        echo DATE=`date '+%Y-%m-%dT%H:%M:%S%:z'` >> $GITHUB_ENV
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Setting up env variables
+        run: |
+          echo DATE=`date '+%Y-%m-%dT%H:%M:%S%:z'` >> $GITHUB_ENV
     
-    - name: Fetching up env varibales
-      run: |
-        echo MyDate=${{ env.DATE }}
-        echo MYENv=${{ env.CONTAINER_NAME }}
+      - name: Fetching up env varibales
+        run: |
+          echo MyDate=${{ env.DATE }}
+          echo MYENv=${{ env.CONTAINER_NAME }}
